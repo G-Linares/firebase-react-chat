@@ -1,6 +1,15 @@
-# React, TS, Firebase - Live Chat
+# Live Chat!
 
-# Relative Paths
+Hi! This mini app was created to learn Firebase and use the most of it.
+In this app you will be able to chat with other users through rooms while still loggin in to your google account.
+
+## Stack
+
+-   Typescript
+-   React
+-   Firebase
+
+## (PERSONAL NOTES) -- Relative Paths
 
 Install the following pakage:
 
