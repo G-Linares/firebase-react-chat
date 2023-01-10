@@ -22,7 +22,6 @@ function App() {
     const handleSubmitRoom = () => {
         if (roomInputRef.current !== null) setRoom(roomInputRef.current.value);
     };
-
     return (
         <div>
             {room ? (

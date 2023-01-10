@@ -6,12 +6,12 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: 'AIzaSyD2hi0A-hRG1AQdp4d3uP776JcpIr6XbG0',
-    authDomain: 'chatapp-32961.firebaseapp.com',
+    apiKey: import.meta.env.VITE_APP_API_KEY,
+    authDomain: import.meta.env.VITE_APP_AUTH_DOAMIN,
     projectId: 'chatapp-32961',
     storageBucket: 'chatapp-32961.appspot.com',
-    messagingSenderId: '944480568313',
-    appId: '1:944480568313:web:1f6dd80fa881dd2d8a7328',
+    messagingSenderId: import.meta.env.VITE_APP_SENDER_ID,
+    appId: import.meta.env.VITE_APP_APP_ID,
 };
 
 // Initialize Firebase
