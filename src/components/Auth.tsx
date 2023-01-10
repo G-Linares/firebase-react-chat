@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
-import { auth, provider } from '~/config/firebase';
 import { signInWithPopup } from 'firebase/auth';
 import Cookies from 'universal-cookie';
+import { auth, provider } from '~/config/firebase';
 
 const cookies = new Cookies();
 
@@ -10,6 +10,8 @@ interface AuthProps {
 }
 
 export default function Auth({ setIsAuth }: AuthProps): ReactElement {
+    // Firebase mehod that returns user info if logged in correctly
+    // most firebase methods need to be async
     const signInWithGoogle = async () => {
         try {
             const result = await signInWithPopup(auth, provider);

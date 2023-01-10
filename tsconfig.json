@@ -19,9 +19,8 @@
         "paths": {
             "~/*": ["src/*"]
         }
-
     },
     "include": ["vite.config.ts", "**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules"],
-    "references": [{ "path": "./tsconfig.node.json" }],
+    "references": [{ "path": "./tsconfig.node.json" }]
 }

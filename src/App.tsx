@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
-import Auth from '~/components/Auth';
 import Cookies from 'universal-cookie';
+import { signOut } from 'firebase/auth';
+import Auth from '~/components/Auth';
+import Chat from '~/components/Chat';
+import { auth } from '~/config/firebase';
 
 const cookies = new Cookies();
 
@@ -19,13 +22,23 @@ function App() {
         );
     }
 
+    // setting the room to the one the user typed
     const handleSubmitRoom = () => {
         if (roomInputRef.current !== null) setRoom(roomInputRef.current.value);
     };
+
+    //signin out and removing the cookie
+    const signUserOut = async () => {
+        await signOut(auth);
+        cookies.remove('auth-token');
+        setIsAuth(false);
+        setRoom(null);
+    };
+
     return (
-        <div>
+        <>
             {room ? (
-                <div> Chat </div>
+                <Chat room={room} />
             ) : (
                 <div className="flex flex-col gap-2 items-center">
                     <label className="border-b-2 text-3xl">
@@ -43,7 +56,10 @@ function App() {
                     </button>
                 </div>
             )}
-        </div>
+            <div className="sign-out">
+                <button onClick={signUserOut}> Sign Out</button>
+            </div>
+        </>
     );
 }
 
